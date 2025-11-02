@@ -1,0 +1,110 @@
+# Fichiers système macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+# Fichiers système Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# Fichiers système Linux
+*~
+.directory
+.Trash-*
+
+# IDE et éditeurs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# Fichiers d'environnement
+.env
+.env.local
+.env.*.local
+*.env
+
+# Dépendances Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+venv/
+ENV/
+env/
+.venv
+
+# Dépendances Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+package-lock.json
+yarn.lock
+
+# Fichiers de build et cache
+*.log
+*.cache
+.cache/
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# Bases de données
+*.db
+*.sqlite
+*.sqlite3
+
+# Fichiers de configuration locale
+config.local.*
+settings.local.*
+
+# Fichiers de test
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+.tox/
+.hypothesis/
+*.cover
+
+# Fichiers de déploiement
+*.war
+*.ear
+*.zip
+*.tar.gz
+
