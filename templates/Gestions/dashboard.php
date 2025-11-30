@@ -48,18 +48,22 @@ if (!isset($success_dashboard)) {
                 </svg>
                 <span>Gérer les Sanctions</span>
             </button>
-            <button class="flex items-center justify-center space-x-2 bg-blue-500 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-blue-400 transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-2.253M15 19.128v-3.873M15 19.128A9.371 9.371 0 0 1 12 21c-2.676 0-5.14-1.257-6.75-3.252M15 15.255A9.371 9.371 0 0 0 12 17.25c-2.676 0-5.14-1.257-6.75-3.252m0 0A9.37 9.37 0 0 1 12 13.5c2.676 0 5.14 1.257 6.75 3.252m0 0v-3.873m0 0a9.37 9.37 0 0 0-6.75-3.252M12 13.5A9.37 9.37 0 0 1 18.75 10.5m-13.5 0A9.37 9.37 0 0 1 12 13.5m-6.75 0V10.5a9.37 9.37 0 0 1 13.5 0v3M3.375 5.25c-.621 0-1.125.504-1.125 1.125v3.375c0 .621.504 1.125 1.125 1.125h3.375c.621 0 1.125-.504 1.125-1.125V6.375c0-.621-.504-1.125-1.125-1.125H3.375Z" />
-                </svg>
-                <span>Voir les Élèves</span>
-            </button>
-            <button href="index.php?action=listeClasse" class="flex items-center justify-center space-x-2 bg-purple-500 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-purple-400 transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0 0 12 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75Z" />
-                </svg>
-                <a href="index.php?action=listeClasse"><span>Gérer les Classes</span></a>
-            </button>
+            <a href="index.php?action=listeEleve">
+                <button class="flex items-center justify-center space-x-2 bg-blue-500 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-blue-400 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-2.253M15 19.128v-3.873M15 19.128A9.371 9.371 0 0 1 12 21c-2.676 0-5.14-1.257-6.75-3.252M15 15.255A9.371 9.371 0 0 0 12 17.25c-2.676 0-5.14-1.257-6.75-3.252m0 0A9.37 9.37 0 0 1 12 13.5c2.676 0 5.14 1.257 6.75 3.252m0 0v-3.873m0 0a9.37 9.37 0 0 0-6.75-3.252M12 13.5A9.37 9.37 0 0 1 18.75 10.5m-13.5 0A9.37 9.37 0 0 1 12 13.5m-6.75 0V10.5a9.37 9.37 0 0 1 13.5 0v3M3.375 5.25c-.621 0-1.125.504-1.125 1.125v3.375c0 .621.504 1.125 1.125 1.125h3.375c.621 0 1.125-.504 1.125-1.125V6.375c0-.621-.504-1.125-1.125-1.125H3.375Z" />
+                    </svg>
+                    <span>Voir les Élèves</span>
+                </button>
+            </a>
+            <a href="index.php?action=listeClasse"><button class="flex items-center justify-center space-x-2 bg-purple-500 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-purple-400 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0 0 12 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75Z" />
+                    </svg>
+                    <span>Gérer les Classes</span>
+
+                </button>
+            </a>
             <button class="flex items-center justify-center space-x-2 bg-red-500 text-white font-semibold px-5 py-2.5 rounded-lg hover:bg-red-600 transition-colors">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M5.636 5.636a9 9 0 1 0 12.728 0M12 3v9" />
@@ -89,8 +93,8 @@ if (!isset($success_dashboard)) {
                 </svg>
             </div>
             <div>
-                <p class="text-gray-500 text-sm">Total Élèves</p>
-                <p class="text-2xl font-bold text-gray-800">6</p>
+                <p class="text-gray-500 text-sm">Total Eleves</p>
+                <p class="text-2xl font-bold text-gray-800"><?= htmlspecialchars($totalEleves, ENT_QUOTES, 'UTF-8') ?></p>
             </div>
         </div>
         <div class="bg-white p-5 rounded-xl shadow-sm border-l-4 border-purple-500 flex items-center space-x-4">
@@ -140,7 +144,7 @@ if (!isset($success_dashboard)) {
                     </div>
                 </a>
                 <div class="border-t border-gray-100"></div>
-                <a href="#" class="flex items-center space-x-4 p-4 hover:bg-gray-50 rounded-lg transition-colors">
+                <a href="index.php?action=creationEleve" class="flex items-center space-x-4 p-4 hover:bg-gray-50 rounded-lg transition-colors">
                     <div class="p-3 rounded-lg bg-blue-100">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-blue-600">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z" />

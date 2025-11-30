@@ -67,9 +67,9 @@ function action_creationClasse(Request $req, Response $res): void
                     'id_niveau'  => $id_niveau,
                 ];
 
-                $id = createClasse($connexion, $nouvelleClasse);
+                $classe = createClasse($connexion, $nouvelleClasse);
 
-                if ($id) {
+                if ($classe) {
                     // MESSAGE DE SUCCÈS
                     $_SESSION['success_message'] = 'La classe a bien été créée.';
                     $res->redirect('index.php?action=listeClasse');

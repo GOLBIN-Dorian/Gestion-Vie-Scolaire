@@ -20,6 +20,7 @@ function action_dashboard(Request $req, Response $res): void
 
     // Récupération du total des classes
     $totalClasses = getTotalClasses($connexion);
+    $totalEleves  = getTotalEleves($connexion);
 
     // Infos utilisateur
     $user   = $_SESSION['user'];
@@ -38,6 +39,7 @@ function action_dashboard(Request $req, Response $res): void
         'prenom'           => $prenom,
         'email'            => $email,
         'totalClasses'     => $totalClasses,
+        'totalEleves'        => $totalEleves,
         'success_dashboard' => $success_dashboard,
     ]);
 }

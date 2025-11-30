@@ -14,6 +14,8 @@ class ComposerStaticInit697d5cd1c54e27999936b7518a20a8d8
         'ed2307c03117c4511571acf27f834b94' => __DIR__ . '/../..' . '/src/controllers/deconnexionController.php',
         '3d9a5afb4b5bc85b680dc2657e2de105' => __DIR__ . '/../..' . '/src/controllers/creationClasseController.php',
         'd1163d13c581d1a85b3666a9beaf4217' => __DIR__ . '/../..' . '/src/controllers/listeClasseController.php',
+        'a5309acb60478f76bc988a215774463d' => __DIR__ . '/../..' . '/src/controllers/creationEleveController.php',
+        'd1c71d14bb4424b3dc0c65d4e229e052' => __DIR__ . '/../..' . '/src/controllers/listeEleveController.php',
     );
 
     public static $prefixLengthsPsr4 = array (
