@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : db
--- Généré le : ven. 28 nov. 2025 à 16:40
+-- Généré le : dim. 30 nov. 2025 à 16:35
 -- Version du serveur : 8.0.44
 -- Version de PHP : 8.3.26
 
@@ -43,6 +43,27 @@ INSERT INTO `classes` (`id_classe`, `nom_classe`, `id_niveau`, `date_creation`) 
 (13, 'SIO1', 2, '2025-11-28 16:39:34'),
 (14, 'premiere', 2, '2025-11-28 16:39:45'),
 (15, 'SIO2', 4, '2025-11-28 16:48:03');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `eleves`
+--
+
+CREATE TABLE `eleves` (
+  `id_eleve` int NOT NULL,
+  `nom_eleve` varchar(50) NOT NULL,
+  `prenom_eleve` varchar(50) NOT NULL,
+  `date_naissance` date NOT NULL,
+  `id_classe` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `eleves`
+--
+
+INSERT INTO `eleves` (`id_eleve`, `nom_eleve`, `prenom_eleve`, `date_naissance`, `id_classe`) VALUES
+(1, 'GOLBIN', 'Dorian', '2004-12-06', 12);
 
 -- --------------------------------------------------------
 
@@ -100,6 +121,13 @@ ALTER TABLE `classes`
   ADD KEY `FK_id_niveau` (`id_niveau`);
 
 --
+-- Index pour la table `eleves`
+--
+ALTER TABLE `eleves`
+  ADD PRIMARY KEY (`id_eleve`),
+  ADD KEY `id_classe` (`id_classe`);
+
+--
 -- Index pour la table `niveaux`
 --
 ALTER TABLE `niveaux`
@@ -122,6 +150,12 @@ ALTER TABLE `classes`
   MODIFY `id_classe` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
+-- AUTO_INCREMENT pour la table `eleves`
+--
+ALTER TABLE `eleves`
+  MODIFY `id_eleve` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT pour la table `niveaux`
 --
 ALTER TABLE `niveaux`
@@ -142,6 +176,12 @@ ALTER TABLE `utilisateurs`
 --
 ALTER TABLE `classes`
   ADD CONSTRAINT `FK_id_niveau` FOREIGN KEY (`id_niveau`) REFERENCES `niveaux` (`id_niveau`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+
+--
+-- Contraintes pour la table `eleves`
+--
+ALTER TABLE `eleves`
+  ADD CONSTRAINT `FK_id_classe` FOREIGN KEY (`id_classe`) REFERENCES `classes` (`id_classe`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
