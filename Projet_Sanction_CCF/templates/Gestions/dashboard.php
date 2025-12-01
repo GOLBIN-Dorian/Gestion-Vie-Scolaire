@@ -7,7 +7,6 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-// On sécurise la variable au cas où elle n'est pas passée par le contrôleur
 if (!isset($success_dashboard)) {
     $success_dashboard = null;
 }
@@ -15,8 +14,6 @@ if (!isset($success_dashboard)) {
 
 
 <div class="max-w-7xl mx-auto space-y-6">
-
-    <!-- Message de succès après connexion -->
     <?php if (!empty($success_dashboard)): ?>
         <div class="mt-4">
             <div class="flex items-start gap-3 p-4 rounded-[16px] border border-green-300 shadow-card bg-gradient-to-r from-green-50 to-green-100/60">
@@ -29,8 +26,6 @@ if (!isset($success_dashboard)) {
             </div>
         </div>
     <?php endif; ?>
-
-    <!-- Welcome Banner -->
     <div class="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-8 rounded-xl shadow-lg">
         <div class="flex items-center space-x-4 mb-4">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 text-yellow-300">

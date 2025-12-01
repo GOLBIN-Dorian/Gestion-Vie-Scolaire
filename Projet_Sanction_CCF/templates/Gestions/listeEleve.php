@@ -4,7 +4,6 @@ $title = 'Gestion des Sanctions — Liste des élèves';
 ob_start();
 ?>
 <div class="mx-auto max-w-6xl px-4 pb-16 pt-10 sm:px-6 lg:px-8">
-    <!-- Hero -->
     <section class="mb-10">
         <div class="rounded-2xl bg-gradient-to-r from-primary-600 to-primary-700 px-6 py-8 text-center text-white shadow-card sm:px-12 sm:py-10">
             <div class="mb-3 flex justify-center">
@@ -73,19 +72,14 @@ ob_start();
                         <?php if (!empty($eleves)) : ?>
                             <?php foreach ($eleves as $eleve) : ?>
                                 <?php
-                                // Données brutes
                                 $prenomBrut = isset($eleve['prenom_eleve']) ? trim($eleve['prenom_eleve']) : '';
                                 $nomBrut    = isset($eleve['nom_eleve']) ? trim($eleve['nom_eleve']) : '';
                                 $classe     = isset($eleve['classe']) ? trim($eleve['classe']) : '';
                                 $niveauVal  = isset($eleve['niveau']) ? trim($eleve['niveau']) : '';
                                 $dateSql    = isset($eleve['date_naissance']) ? $eleve['date_naissance'] : null;
-
-                                // Initiales
                                 $i1 = $prenomBrut !== '' ? mb_substr($prenomBrut, 0, 1) : '';
                                 $i2 = $nomBrut !== '' ? mb_substr($nomBrut, 0, 1) : '';
                                 $initiales = mb_strtoupper($i1 . $i2);
-
-                                // Nom complet formaté : "Dorian GOLBIN"
                                 $prenomAffiche = $prenomBrut !== ''
                                     ? mb_convert_case($prenomBrut, MB_CASE_TITLE, 'UTF-8')
                                     : '';
@@ -93,8 +87,6 @@ ob_start();
                                     ? mb_strtoupper($nomBrut, 'UTF-8')
                                     : '';
                                 $nomComplet = trim($prenomAffiche . ' ' . $nomAffiche);
-
-                                // Badge de niveau (si tu veux un badge même vide)
                                 $badgeClasses = 'bg-slate-100 text-slate-400';
                                 $niveauAffiche = '—';
 
@@ -111,7 +103,6 @@ ob_start();
                                     }
                                 }
 
-                                // Date de naissance formatée
                                 $dateAffiche = '-';
                                 if (!empty($dateSql)) {
                                     try {

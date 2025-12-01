@@ -1,17 +1,14 @@
 <?php
 
-// Toutes les fonctions liées aux utilisateurs.
 
 require_once __DIR__ . '/../config/database.php';
 function createUser(PDO $connexion, array $utilisateur): int|false
 {
-    // Récupération des données depuis le tableau
     $email         = $utilisateur['email'];
     $password      = $utilisateur['password'];
     $nom           = $utilisateur['nom'];
     $prenom        = $utilisateur['prenom'];
 
-    // Vérification minimale des champs obligatoires
     if ($email === null || $password === null || $nom === null || $prenom === null) {
         return false;
     }

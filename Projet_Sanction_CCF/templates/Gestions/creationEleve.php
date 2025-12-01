@@ -123,7 +123,6 @@ ob_start();
                             <?php if (!empty($classes) && is_array($classes)): ?>
                                 <?php foreach ($classes as $classe): ?>
                                     <?php
-                                    // Adapte les clés à ta BDD
                                     $classeId  = $classe['id_classe'] ?? null;
                                     $classeNom = $classe['nom_classe'] ?? ($classe['libelle_classe'] ?? ('Classe ' . $classeId));
                                     ?>
@@ -179,7 +178,6 @@ ob_start();
         </div>
     </section>
 
-    <!-- Info / conseil -->
     <section aria-label="Conseil création élève" class="mx-auto max-w-4xl">
         <div class="flex items-start rounded-2xl border border-blue-100 bg-blue-50 px-4 py-4 shadow-sm sm:px-5 sm:py-5">
             <div class="mr-3 mt-0.5 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-blue-100">
