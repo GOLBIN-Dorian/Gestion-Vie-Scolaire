@@ -11,4 +11,8 @@ return array(
     'd5e4b083ab3d3300c6bbdd10b81907c3' => $baseDir . '/src/controllers/inscriptionController.php',
     'e268ae21b57788fd392ac36d8c456dbb' => $baseDir . '/src/controllers/dashboardController.php',
     'ed2307c03117c4511571acf27f834b94' => $baseDir . '/src/controllers/deconnexionController.php',
+    '3d9a5afb4b5bc85b680dc2657e2de105' => $baseDir . '/src/controllers/creationClasseController.php',
+    'd1163d13c581d1a85b3666a9beaf4217' => $baseDir . '/src/controllers/listeClasseController.php',
+    'a5309acb60478f76bc988a215774463d' => $baseDir . '/src/controllers/creationEleveController.php',
+    'd1c71d14bb4424b3dc0c65d4e229e052' => $baseDir . '/src/controllers/listeEleveController.php',
 );

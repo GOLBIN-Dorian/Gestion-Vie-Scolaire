@@ -8,6 +8,9 @@ if (!isset($errors) || !is_array($errors)) {
 if (!isset($email)) {
   $email = '';
 }
+if (!isset($success)) {
+  $success = null;
+}
 ?>
 
 <div class="mx-auto max-w-shell px-5">
@@ -26,17 +29,35 @@ if (!isset($email)) {
     </div>
   </section>
 
-
   <section class="grid place-items-center mt-10">
 
-    <?php if (!empty($errors['login'] ?? null)): ?>
-      <div class="mb-6 p-4 bg-red-100 border-l-4 border-red-500 text-red-700">
-        <p><?php echo $errors['login']; ?></p>
+    <?php if (!empty($success)): ?>
+      <div class="mb-6 w-full max-w-[560px]">
+        <div class="flex items-start gap-3 p-4 rounded-[16px] border border-green-300 shadow-card bg-gradient-to-r from-green-50 to-green-100/60">
+          <div class="flex h-9 w-9 items-center justify-center rounded-full bg-green-600 text-white text-[18px]">
+            ✔
+          </div>
+          <div class="text-green-800 text-[14.6px] font-medium leading-snug">
+            <?= htmlspecialchars($success) ?>
+          </div>
+        </div>
       </div>
     <?php endif; ?>
 
-    <form <?php echo isset($_GET['redirect']) ? '?redirect=' . htmlspecialchars($_GET['redirect']) : ''; ?>
-      class="w-full max-w-[560px] bg-white border border-slate-100 rounded-[20px] shadow-card px-6 md:px-8 py-6 md:py-7" method="POST">
+
+    <!-- Message d'erreur de login -->
+    <?php if (!empty($errors['login'] ?? null)): ?>
+      <div class="mb-6 w-full max-w-[560px]">
+        <div class="p-4 bg-red-100 border-l-4 border-red-500 text-red-700 rounded-[10px] text-[14px] leading-snug">
+          <p><?php echo $errors['login']; ?></p>
+        </div>
+      </div>
+    <?php endif; ?>
+
+    <form
+      <?php echo isset($_GET['redirect']) ? 'action="?redirect=' . htmlspecialchars($_GET['redirect']) . '"' : ''; ?>
+      class="w-full max-w-[560px] bg-white border border-slate-100 rounded-[20px] shadow-card px-6 md:px-8 py-6 md:py-7"
+      method="POST">
 
       <!-- Email -->
       <div class="mb-4">
@@ -85,6 +106,7 @@ if (!isset($email)) {
     </form>
   </section>
 </div>
+
 <?php
 $content = ob_get_clean();
 include __DIR__ . '/../layout.php';

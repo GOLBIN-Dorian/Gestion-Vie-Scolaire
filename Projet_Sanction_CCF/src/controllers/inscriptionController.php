@@ -75,6 +75,9 @@ function action_inscription(Request $req, Response $res): void
             ];
 
             if (createUser($connexion, $nouvelUtilisateur)) {
+
+                $_SESSION['success'] = "Votre compte a bien été créé. Vous pouvez maintenant vous connecter.";
+
                 $res->redirect('index.php?action=connexion');
                 return;
             }
