@@ -15,4 +15,6 @@ return array(
     'd1163d13c581d1a85b3666a9beaf4217' => $baseDir . '/src/controllers/listeClasseController.php',
     'a5309acb60478f76bc988a215774463d' => $baseDir . '/src/controllers/creationEleveController.php',
     'd1c71d14bb4424b3dc0c65d4e229e052' => $baseDir . '/src/controllers/listeEleveController.php',
+    '44bcb1c7c9d41c2e7df4d9e460b824dc' => $baseDir . '/src/controllers/creationProfesseurController.php',
+    '825ba76f992fde0175be9b1933f60548' => $baseDir . '/src/controllers/creationSanctionController.php',
 );

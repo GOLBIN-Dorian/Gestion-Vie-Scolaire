@@ -12,7 +12,9 @@
       "src/controllers/creationClasseController.php",
       "src/controllers/listeClasseController.php",
       "src/controllers/creationEleveController.php",
-      "src/controllers/listeEleveController.php"
+      "src/controllers/listeEleveController.php",
+      "src/controllers/creationProfesseurController.php",
+      "src/controllers/creationSanctionController.php"
     ]
   }
 }

@@ -124,7 +124,7 @@
                 <span>🏠</span> <span>Accueil</span>
               </a>
               <a href="index.php?action=dashboard" class="inline-flex items-center gap-2">
-                <span>📊</span> <span>Dashboard / Profil</span>
+                <span>📊</span> <span>Dashboard</span>
               </a>
               <a href="index.php?action=listeClasse" class="inline-flex items-center gap-2">
                 <span>📚</span> <span>Classes</span>
@@ -152,7 +152,7 @@
           <div class="mx-auto max-w-content px-5 py-3 space-y-1">
             <a href="index.php?action=dashboard"
               class="flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-primary-700/70 transition">
-              <span>📊</span> <span>Dashboard / Profil</span>
+              <span>📊</span> <span>Dashboard</span>
             </a>
             <a href="index.php?action=listeClasse"
               class="flex items-center gap-2 px-3 py-2 rounded-xl hover:bg-primary-700/70 transition">
