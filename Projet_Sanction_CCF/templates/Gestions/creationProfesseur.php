@@ -3,6 +3,12 @@
 $title = 'Gestion des Sanctions — Création de professeur';
 ob_start();
 
+
+$errors = $errors ?? [];
+$nom_professeur = $nom_professeur ?? '';
+$prenom_professeur = $prenom_professeur ?? '';
+$matiere_professeur = $matiere_professeur ?? '';
+
 ?>
 
 <div class="mx-auto max-w-6xl px-4 pb-16 pt-10 sm:px-6 lg:px-8">
@@ -40,55 +46,53 @@ ob_start();
                 </div>
             </header>
 
-            <form class="space-y-6" method="post" action="index.php?action=creationProf">
+            <form class="space-y-6" method="post" action="index.php?action=creationProfesseur">
                 <div class="grid gap-4 sm:grid-cols-2">
                     <div>
-                        <label for="nom" class="mb-1 block text-xs font-medium text-slate-700 sm:text-sm">
+                        <label for="nom_professeur" class="mb-1 block text-xs font-medium text-slate-700 sm:text-sm">
                             Nom <span class="text-red-500">*</span>
                         </label>
-                        <input
-                            id="nom"
-                            name="nom_prof"
+                        <input id="nom_professeur"
+                            name="nom_professeur"
                             type="text"
                             placeholder="Ex: Dupont"
-                            value="<?= htmlspecialchars($nom_prof ?? '') ?>"
+                            value="<?= htmlspecialchars($nom_professeur ?? '') ?>"
                             class="block w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-800 outline-none ring-0 transition focus:border-primary-500 focus:bg-white focus:ring-2 focus:ring-primary-100" />
-                        <?php if (!empty($errors['nom_prof'])): ?>
+                        <?php if (!empty($errors['nom_professeur'])): ?>
                             <p class="mt-1 text-xs text-red-500">
-                                <?= htmlspecialchars($errors['nom_prof']) ?>
+                                <?= htmlspecialchars($errors['nom_professeur']) ?>
                             </p>
                         <?php endif; ?>
                     </div>
                     <div>
-                        <label for="prenom" class="mb-1 block text-xs font-medium text-slate-700 sm:text-sm">
+                        <label for="prenom_professeur" class="mb-1 block text-xs font-medium text-slate-700 sm:text-sm">
                             Prénom <span class="text-red-500">*</span>
                         </label>
-                        <input
-                            id="prenom"
-                            name="prenom_prof"
+                        <input id="prenom_professeur"
+                            name="prenom_professeur"
                             type="text"
                             placeholder="Ex: Marie"
-                            value="<?= htmlspecialchars($prenom_prof ?? '') ?>"
+                            value="<?= htmlspecialchars($prenom_professeur ?? '') ?>"
                             class="block w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-sm text-slate-800 outline-none ring-0 transition focus:border-primary-500 focus:bg-white focus:ring-2 focus:ring-primary-100" />
-                        <?php if (!empty($errors['prenom_prof'])): ?>
+                        <?php if (!empty($errors['prenom_professeur'])): ?>
                             <p class="mt-1 text-xs text-red-500">
-                                <?= htmlspecialchars($errors['prenom_prof']) ?>
+                                <?= htmlspecialchars($errors['prenom_professeur']) ?>
                             </p>
                         <?php endif; ?>
                     </div>
                 </div>
 
                 <div>
-                    <label for="matiere" class="mb-1 block text-xs font-medium text-slate-700 sm:text-sm">
+                    <label for="matiere_professeur" class="mb-1 block text-xs font-medium text-slate-700 sm:text-sm">
                         Matière <span class="text-red-500">*</span>
                     </label>
                     <div class="relative">
                         <input
-                            id="matiere"
-                            name="matiere"
+                            id="matiere_professeur"
+                            name="matiere_professeur"
                             type="text"
                             placeholder="Ex: Mathématiques, Histoire-Géographie, EPS..."
-                            value="<?= htmlspecialchars($matiere ?? '') ?>"
+                            value="<?= htmlspecialchars($matiere_professeur ?? '') ?>"
                             class="block w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 pr-10 text-sm text-slate-800 outline-none ring-0 transition focus:border-primary-500 focus:bg-white focus:ring-2 focus:ring-primary-100" />
                         <span class="pointer-events-none absolute inset-y-0 right-3 flex items-center text-slate-400">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
@@ -99,9 +103,9 @@ ob_start();
                     <p class="mt-1 text-[11px] text-slate-400 sm:text-xs">
                         Indiquez la discipline principale enseignée par le professeur.
                     </p>
-                    <?php if (!empty($errors['matiere'])): ?>
+                    <?php if (!empty($errors['matiere_professeur'])): ?>
                         <p class="mt-1 text-xs text-red-500">
-                            <?= htmlspecialchars($errors['matiere']) ?>
+                            <?= htmlspecialchars($errors['matiere_professeur']) ?>
                         </p>
                     <?php endif; ?>
                 </div>
@@ -114,7 +118,7 @@ ob_start();
 
                 <div class="flex flex-col gap-3 pt-2 sm:flex-row sm:justify-between">
                     <a
-                        href="index.php?action=listeProfesseurs"
+                        href="index.php?action=listeProfesseur"
                         class="inline-flex items-center justify-center rounded-lg border border-slate-200 bg-white px-4 py-2.5 text-sm font-medium text-slate-700 shadow-sm transition hover:bg-slate-50">
                         <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />

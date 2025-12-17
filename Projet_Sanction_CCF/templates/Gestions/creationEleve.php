@@ -30,12 +30,21 @@ ob_start();
     <section aria-labelledby="student-info-title" class="mb-8">
         <div class="mx-auto max-w-4xl rounded-2xl bg-white p-6 shadow-card sm:p-8">
             <header class="mb-6">
-                <h2 id="student-info-title" class="text-base font-semibold text-slate-800 sm:text-lg">
-                    Informations de l'élève
-                </h2>
-                <p class="mt-1 text-xs text-slate-500 sm:text-sm">
-                    Renseignez les informations nécessaires pour créer l'élève
-                </p>
+                <!-- Ajout du conteneur flex pour aligner le titre et le message d'obligation -->
+                <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2">
+                    <div>
+                        <h2 id="student-info-title" class="text-base font-semibold text-slate-800 sm:text-lg">
+                            Informations de l'élève
+                        </h2>
+                        <p class="mt-1 text-xs text-slate-500 sm:text-sm">
+                            Renseignez les informations nécessaires pour créer l'élève
+                        </p>
+                    </div>
+                    <!-- AJOUT DU MESSAGE ICI -->
+                    <p class="text-xs text-slate-400 italic">
+                        <span class="text-red-500">*</span> Champs obligatoires
+                    </p>
+                </div>
             </header>
 
             <!-- On ajoute method="post" -->

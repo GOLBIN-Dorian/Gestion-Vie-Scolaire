@@ -29,12 +29,20 @@ ob_start();
         class="mb-6 rounded-2xl bg-white px-5 py-6 shadow-lg shadow-slate-200/80 sm:px-8 sm:py-7">
         <!-- Card header -->
         <div class="mb-6 border-b border-slate-100 pb-4">
-            <h2 class="text-base font-semibold text-slate-900">
-                Informations de la classe
-            </h2>
-            <p class="mt-1 text-xs text-slate-500">
-                Renseignez les informations nécessaires pour créer la classe
-            </p>
+            <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2">
+                <div>
+                    <h2 class="text-base font-semibold text-slate-900">
+                        Informations de la classe
+                    </h2>
+                    <p class="mt-1 text-xs text-slate-500">
+                        Renseignez les informations nécessaires pour créer la classe
+                    </p>
+                </div>
+                <!-- AJOUT DU MESSAGE ICI -->
+                <p class="text-xs text-slate-400 italic">
+                    <span class="text-red-500">*</span> Champs obligatoires
+                </p>
+            </div>
         </div>
 
         <!-- Message d'erreur général éventuel -->
