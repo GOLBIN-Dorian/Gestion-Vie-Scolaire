@@ -14,17 +14,18 @@ if (!isset($success_dashboard)) {
 
 
 <div class="max-w-7xl mx-auto space-y-6">
-    <?php if (!empty($success_dashboard)): ?>
+    <?php if (isset($_SESSION['success_message'])): ?>
         <div class="mt-4">
             <div class="flex items-start gap-3 p-4 rounded-[16px] border border-green-300 shadow-card bg-gradient-to-r from-green-50 to-green-100/60">
                 <div class="flex h-9 w-9 items-center justify-center rounded-full bg-green-600 text-white text-[18px]">
                     ✔
                 </div>
                 <div class="text-green-800 text-[14.6px] font-medium leading-snug">
-                    <?= htmlspecialchars($success_dashboard) ?>
+                    <?= htmlspecialchars($_SESSION['success_message']) ?>
                 </div>
             </div>
         </div>
+        <?php unset($_SESSION['success_message']); ?>
     <?php endif; ?>
     <div class="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-8 rounded-xl shadow-lg">
         <div class="flex items-center space-x-4 mb-4">

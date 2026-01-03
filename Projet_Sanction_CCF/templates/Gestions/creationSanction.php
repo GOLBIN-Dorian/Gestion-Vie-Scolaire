@@ -2,7 +2,6 @@
 
 $title = 'Gestion des Sanctions — Création de sanction';
 ob_start();
-
 ?>
 
 <div class="mx-auto max-w-6xl px-4 pb-16 pt-10 sm:px-6 lg:px-8">
@@ -113,19 +112,18 @@ ob_start();
                         <div class="relative">
                             <select
                                 id="type_sanction"
-                                name="type_sanction"
+                                name="id_type"
                                 class="block w-full appearance-none rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 pr-9 text-sm text-slate-800 outline-none ring-0 transition focus:border-primary-500 focus:bg-white focus:ring-2 focus:ring-primary-100">
                                 <option value="">Choisir un type</option>
-                                <?php
-                                $types = $types ?? ['Avertissement', 'Retenue', 'Exclusion temporaire', 'Exclusion définitive', 'Travail d\'intérêt général'];
-                                foreach ($types as $type):
-                                ?>
-                                    <option
-                                        value="<?= htmlspecialchars($type) ?>"
-                                        <?= (isset($type_sanction) && $type_sanction === $type) ? 'selected' : '' ?>>
-                                        <?= htmlspecialchars($type) ?>
-                                    </option>
-                                <?php endforeach; ?>
+                                <?php if (!empty($types) && is_array($types)): ?>
+                                    <?php foreach ($types as $type): ?>
+                                        <option
+                                            value="<?= htmlspecialchars($type['id_sanction']) ?>"
+                                            <?= (isset($id_type) && (string)$id_type === (string)$type['id_sanction']) ? 'selected' : '' ?>>
+                                            <?= htmlspecialchars($type['type_sanction']) ?>
+                                        </option>
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
                             </select>
                             <span class="pointer-events-none absolute inset-y-0 right-3 flex items-center text-slate-400">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
@@ -133,9 +131,9 @@ ob_start();
                                 </svg>
                             </span>
                         </div>
-                        <?php if (!empty($errors['type_sanction'])): ?>
+                        <?php if (!empty($errors['id_type'])): ?>
                             <p class="mt-1 text-xs text-red-500">
-                                <?= htmlspecialchars($errors['type_sanction']) ?>
+                                <?= htmlspecialchars($errors['id_type']) ?>
                             </p>
                         <?php endif; ?>
                     </div>

@@ -49,9 +49,9 @@ function getProfesseurById(PDO $connexion, int $id_professeur): array|false
 function getAllProfesseurs(PDO $connexion): array
 {
     $requete = '
-        SELECT id_professeur, prenom_professeur, nom_professeur, matiere_professeur
+        SELECT id_professeur AS id_prof, nom_professeur AS nom_prof, prenom_professeur AS prenom_prof
         FROM professeurs
-        ORDER BY nom_professeur, prenom_professeur
+        ORDER BY nom_prof
     ';
 
     $requetePDO = $connexion->prepare($requete);
