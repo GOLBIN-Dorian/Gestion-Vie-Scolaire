@@ -150,6 +150,17 @@ CREATE TABLE
     `type_sanction` varchar(255) NOT NULL
   ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci;
 
+--
+-- Déchargement des données de la table `type_sanctions` (AJOUTÉ POUR TEST)
+--
+INSERT INTO
+  `type_sanctions` (`id_sanction`, `type_sanction`)
+VALUES
+  (1, 'Avertissement verbal'),
+  (2, 'Heure de colle'),
+  (3, 'Exclusion temporaire'),
+  (4, 'Devoir supplémentaire');
+
 -- --------------------------------------------------------
 --
 -- Structure de la table `utilisateurs`
@@ -219,7 +230,15 @@ ALTER TABLE `professeurs` ADD PRIMARY KEY (`id_professeur`);
 --
 -- Index pour la table `sanctions`
 --
-ALTER TABLE `sanctions` ADD PRIMARY KEY (`id_sanction`);
+ALTER TABLE `sanctions` ADD PRIMARY KEY (`id_sanction`),
+ADD KEY `FK_sanctions_id_type` (`id_type`),
+ADD KEY `FK_sanctions_id_eleve` (`id_eleve`),
+ADD KEY `FK_sanctions_id_professeur` (`id_professeur`);
+
+--
+-- Index pour la table `type_sanctions` (CORRIGÉ)
+--
+ALTER TABLE `type_sanctions` ADD PRIMARY KEY (`id_sanction`);
 
 --
 -- Index pour la table `utilisateurs`
@@ -259,6 +278,12 @@ AUTO_INCREMENT = 4;
 ALTER TABLE `sanctions` MODIFY `id_sanction` int NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT pour la table `type_sanctions` (CORRIGÉ)
+--
+ALTER TABLE `type_sanctions` MODIFY `id_sanction` int NOT NULL AUTO_INCREMENT,
+AUTO_INCREMENT = 5;
+
+--
 -- AUTO_INCREMENT pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs` MODIFY `id` int NOT NULL AUTO_INCREMENT,
@@ -280,9 +305,9 @@ ALTER TABLE `eleves` ADD CONSTRAINT `FK_id_classe` FOREIGN KEY (`id_classe`) REF
 --
 -- Contraintes pour la table `sanctions`
 --
-ALTER TABLE `sanctions` ADD CONSTRAINT `FK_sanctions_id_type` FOREIGN KEY (`id_type`) REFERENCES `type_sanctions` (`id_sanction`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-ADD CONSTRAINT `FK_sanctions_id_eleve` FOREIGN KEY (`id_eleve`) REFERENCES `eleves` (`id_eleve`) ON DELETE CASCADE ON UPDATE CASCADE,
-ADD CONSTRAINT `FK_sanctions_id_professeur` FOREIGN KEY (`id_professeur`) REFERENCES `professeurs` (`id_professeur`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+ALTER TABLE `sanctions` ADD CONSTRAINT `FK_sanctions_id_eleve` FOREIGN KEY (`id_eleve`) REFERENCES `eleves` (`id_eleve`) ON DELETE CASCADE ON UPDATE CASCADE,
+ADD CONSTRAINT `FK_sanctions_id_professeur` FOREIGN KEY (`id_professeur`) REFERENCES `professeurs` (`id_professeur`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+ADD CONSTRAINT `FK_sanctions_id_type` FOREIGN KEY (`id_type`) REFERENCES `type_sanctions` (`id_sanction`) ON DELETE RESTRICT ON UPDATE RESTRICT;
 
 COMMIT;
 

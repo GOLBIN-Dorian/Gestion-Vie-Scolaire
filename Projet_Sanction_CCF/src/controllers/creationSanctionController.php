@@ -69,7 +69,12 @@ function action_creationSanction(Request $req, Response $res): void
 
             $result = createSanction($connexion, $sanctionData);
             if ($result !== false) {
-                $res->redirect('index.php?action=listeSanctions');
+                // message de succès en session puis redirection vers la liste
+                if (session_status() === PHP_SESSION_NONE) {
+                    session_start();
+                }
+                $_SESSION['success_message'] = 'Sanction créée avec succès.';
+                $res->redirect('index.php?action=listeSanction');
                 return;
             } else {
                 $errors['general'] = "Erreur lors de l'enregistrement de la sanction. Vérifiez les données ou contactez l'administrateur.";

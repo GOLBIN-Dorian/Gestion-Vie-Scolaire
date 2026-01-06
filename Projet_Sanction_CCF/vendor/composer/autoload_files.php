@@ -17,4 +17,5 @@ return array(
     'd1c71d14bb4424b3dc0c65d4e229e052' => $baseDir . '/src/controllers/listeEleveController.php',
     '44bcb1c7c9d41c2e7df4d9e460b824dc' => $baseDir . '/src/controllers/creationProfesseurController.php',
     '825ba76f992fde0175be9b1933f60548' => $baseDir . '/src/controllers/creationSanctionController.php',
+    '5fcae2c6def7293135f82e314c785948' => $baseDir . '/src/controllers/listeSanctionController.php',
 );

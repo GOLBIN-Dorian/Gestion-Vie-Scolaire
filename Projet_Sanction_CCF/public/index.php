@@ -24,7 +24,8 @@ try {
         ->addRoute('creationEleve', 'action_creationEleve', ['GET', 'POST'])
         ->addRoute('listeEleve', 'action_listeEleve', ['GET'])
         ->addRoute('creationProfesseur', 'action_creationProfesseur', ['GET', 'POST'])
-        ->addRoute('creationSanction', 'action_creationSanction', ['GET', 'POST']);
+        ->addRoute('creationSanction', 'action_creationSanction', ['GET', 'POST'])
+        ->addRoute('listeSanction', 'action_listeSanction', ['GET']);
 
     $router->handleRequest();
 } catch (Exception $e) {

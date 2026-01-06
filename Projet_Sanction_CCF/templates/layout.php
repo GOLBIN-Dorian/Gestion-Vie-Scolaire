@@ -132,7 +132,7 @@
               <a href="index.php?action=listeEleve" class="inline-flex items-center gap-2">
                 <span>👥</span> <span>Élèves</span>
               </a>
-              <a href="index.php?action=sanctions" class="inline-flex items-center gap-2">
+              <a href="index.php?action=listeSanction" class="inline-flex items-center gap-2">
                 <span>⚖️</span> <span>Sanctions</span>
               </a>
             </div>

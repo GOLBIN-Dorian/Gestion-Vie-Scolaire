@@ -72,3 +72,44 @@ function getAllSanctions(PDO $connexion): array
         return [];
     }
 }
+
+
+function getAllSanctionsWithType(PDO $connexion)
+{
+    $requete = 'SELECT 
+        s.id_sanction,
+        s.date_sanction,
+        s.motif_sanction,
+        -- Infos Type de sanction
+        t.type_sanction AS nom_type,
+        s.id_type AS type_id,
+        -- Infos Élève
+        e.nom_eleve AS eleve_nom,
+        e.prenom_eleve AS eleve_prenom,
+        c.nom_classe,
+        -- Infos Professeur
+        p.nom_professeur AS prof_nom,
+        p.prenom_professeur AS prof_prenom
+    FROM 
+        sanctions s
+    LEFT JOIN 
+        type_sanctions t ON s.id_type = t.id_sanction
+    LEFT JOIN 
+        eleves e ON s.id_eleve = e.id_eleve
+    LEFT JOIN 
+        classes c ON e.id_classe = c.id_classe
+    LEFT JOIN 
+        professeurs p ON s.id_professeur = p.id_professeur
+    ORDER BY 
+        s.date_sanction DESC';
+
+    try {
+        $requetePDO = $connexion->prepare($requete);
+        $requetePDO->execute();
+
+        return $requetePDO->fetchAll(PDO::FETCH_ASSOC) ?: [];
+    } catch (PDOException $e) {
+        error_log('getAllSanctionsWithType PDO Error: ' . $e->getMessage());
+        return [];
+    }
+}

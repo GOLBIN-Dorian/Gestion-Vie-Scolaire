@@ -186,7 +186,7 @@ ob_start();
 
                 <div class="flex flex-col gap-3 pt-2 sm:flex-row sm:justify-between">
                     <a
-                        href="index.php?action=listeSanctions"
+                        href="index.php?action=listeSanction"
                         class="inline-flex items-center justify-center rounded-lg border border-slate-200 bg-white px-4 py-2.5 text-sm font-medium text-slate-700 shadow-sm transition hover:bg-slate-50">
                         <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />

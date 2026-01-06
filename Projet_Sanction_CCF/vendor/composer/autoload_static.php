@@ -18,6 +18,7 @@ class ComposerStaticInit697d5cd1c54e27999936b7518a20a8d8
         'd1c71d14bb4424b3dc0c65d4e229e052' => __DIR__ . '/../..' . '/src/controllers/listeEleveController.php',
         '44bcb1c7c9d41c2e7df4d9e460b824dc' => __DIR__ . '/../..' . '/src/controllers/creationProfesseurController.php',
         '825ba76f992fde0175be9b1933f60548' => __DIR__ . '/../..' . '/src/controllers/creationSanctionController.php',
+        '5fcae2c6def7293135f82e314c785948' => __DIR__ . '/../..' . '/src/controllers/listeSanctionController.php',
     );
 
     public static $prefixLengthsPsr4 = array (

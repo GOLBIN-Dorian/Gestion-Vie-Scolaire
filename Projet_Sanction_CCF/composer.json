@@ -14,7 +14,8 @@
       "src/controllers/creationEleveController.php",
       "src/controllers/listeEleveController.php",
       "src/controllers/creationProfesseurController.php",
-      "src/controllers/creationSanctionController.php"
+      "src/controllers/creationSanctionController.php",
+      "src/controllers/listeSanctionController.php"
     ]
   }
 }
