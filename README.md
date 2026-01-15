@@ -1,39 +1,37 @@
 # 🏫 Gestion-Vie-Scolaire
 
-![PHP](https://img.shields.io/badge/php-%23777BB4.svg?style=for-the-badge&logo=php&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![Version](https://img.shields.io/badge/version-1.0.0-blue)
+![PHP](https://img.shields.io/badge/PHP-8.x-777BB4?logo=php&logoColor=white)
+![Tailwind](https://img.shields.io/badge/Tailwind_CSS-3.x-38B2AC?logo=tailwind-css&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?logo=mysql&logoColor=white)
 
-## 📝 Présentation du projet
-Ce projet a été développé dans le cadre de ma formation en **BTS SIO (SLAM)**. Il s'agit d'une application web destinée à simplifier la gestion administrative d'un établissement scolaire, plus précisément pour le **Bureau de la Vie Scolaire (BVS)**.
+## 📋 Présentation
+**Gestion-Vie-Scolaire** est une application web métier conçue pour centraliser et simplifier la gestion administrative et disciplinaire au sein d'un établissement. Elle permet de piloter l'ensemble de la structure scolaire : des classes aux professeurs, jusqu'au suivi individuel des élèves.
 
-L'outil permet de centraliser le suivi des élèves et l'attribution de sanctions disciplinaires de manière structurée, tout en offrant une interface moderne et fluide.
-
----
-
-## ✨ Fonctionnalités clés
-- **Gestion des effectifs** : Consultation et gestion de la liste des élèves par classe.
-- **Suivi disciplinaire** : Enregistrement et historique des sanctions pour chaque élève.
-- **Tableau de bord BVS** : Interface permettant d'avoir une vue d'ensemble sur le climat scolaire de la classe.
-- **Sécurisation** : Authentification des utilisateurs et protection des données sensibles.
+> Ce projet a été réalisé dans le cadre du **BTS SIO SLAM** pour valider les compétences en conception applicative et gestion de bases de données relationnelles.
 
 ---
 
-## 🛠 Détails techniques
-L'accent a été mis sur la séparation des responsabilités et la modernité de l'interface :
-- **Architecture** : Utilisation du design pattern **MVC** (Modèle-Vue-Contrôleur) pour une structure de code propre.
-- **Backend** : Développement en **PHP** natif.
-- **Base de données** : **MySQL** avec utilisation de l'extension **PDO** (requêtes préparées) pour la sécurité.
-- **Frontend** : Utilisation de **Tailwind CSS** pour un design "Utility-First", garantissant une interface 100% responsive et une maintenance simplifiée du style.
+## 🚀 Fonctionnalités principales
+L'application propose une gestion complète (CRUD) des entités scolaires :
+
+- **Gestion des Classes** : Création, organisation et affectation des élèves par niveau.
+- **Gestion des Élèves** : Suivi des dossiers individuels et historique scolaire.
+- **Gestion des Professeurs** : Administration des comptes enseignants et gestion des accès.
+- **Système de Sanctions** : Module de saisie des incidents et suivi des mesures disciplinaires.
+- **Tableau de bord BVS** : Vue d'ensemble pour le Bureau de la Vie Scolaire.
 
 ---
 
-## 🚀 Installation & Utilisation
-### Prérequis
-- Un serveur local (WampServer, XAMPP ou Laragon).
-- PHP 8.0 ou supérieur.
-- MySQL.
+## 🛠 Architecture & Technologies
+Le projet repose sur des standards modernes pour assurer performance et sécurité :
+
+* **Backend :** PHP natif avec architecture **MVC** (Modèle-Vue-Contrôleur).
+* **Frontend :** **Tailwind CSS** pour une interface utilisateur (UI) moderne, réactive et optimisée.
+* **Base de données :** **MySQL** avec utilisation de **PDO** (requêtes préparées) pour une sécurité accrue contre les injections.
+* **Architecture :** Séparation stricte entre la logique métier, les données et l'affichage.
+
+---
 
 ### Procédure
 1. **Cloner le projet** :
