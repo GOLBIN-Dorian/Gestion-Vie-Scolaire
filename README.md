@@ -1,5 +1,3 @@
-
-
 # 📘 Gestion Vie Scolaire - Système de Sanctions
 
 Cette application web est une solution de gestion disciplinaire conçue pour le personnel de vie scolaire d'un lycée. Elle permet de centraliser le suivi des incidents, des élèves, des classes et des professeurs au sein d'une interface sécurisée.
