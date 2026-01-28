@@ -1,0 +1,21 @@
+{
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    },
+    "files": [
+      "src/controllers/indexController.php",
+      "src/controllers/connexionController.php",
+      "src/controllers/inscriptionController.php",
+      "src/controllers/dashboardController.php",
+      "src/controllers/deconnexionController.php",
+      "src/controllers/creationClasseController.php",
+      "src/controllers/listeClasseController.php",
+      "src/controllers/creationEleveController.php",
+      "src/controllers/listeEleveController.php",
+      "src/controllers/creationProfesseurController.php",
+      "src/controllers/creationSanctionController.php",
+      "src/controllers/listeSanctionController.php"
+    ]
+  }
+}
