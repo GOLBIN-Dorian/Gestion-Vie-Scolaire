@@ -1,32 +1,36 @@
+Voici une version enrichie et structurée du fichier `README.md` pour votre projet, basée sur les fichiers fournis (backlog, structure technique, configuration Docker et base de données).
+
+---
+
 # 📘 Gestion Vie Scolaire - Système de Sanctions
 
-Cette application web est destinée au personnel de vie scolaire d'un lycée pour gérer les incidents disciplinaires, les élèves, les classes et les professeurs.
+Cette application web est une solution de gestion disciplinaire conçue pour le personnel de vie scolaire d'un lycée. Elle permet de centraliser le suivi des incidents, des élèves, des classes et des professeurs au sein d'une interface sécurisée.
 
 ## 🎯 Fonctionnalités principales
 
-L'application est organisée autour de plusieurs modules clés définis dans le backlog :
+L'application est structurée autour de plusieurs modules clés issus du backlog produit :
 
-* **Authentification & Sécurité** : Connexion, inscription du personnel et déconnexion sécurisée.
-* **Tableau de bord (Dashboard)** : Vue d'ensemble après connexion pour naviguer vers les différentes fonctionnalités.
-* **Gestion des Classes** : Création et consultation de la liste des classes par niveau (Seconde, Première, Terminale, BTS).
-* **Gestion des Élèves** : Inscription des élèves avec suivi par classe et filtrage.
-* **Gestion des Professeurs** : Enregistrement des enseignants et de leurs matières.
-* **Gestion des Sanctions** : Création, modification et consultation des sanctions (Heures de colle, avertissements, etc.) associées à un élève et un professeur.
+* **Authentification & Sécurité** : Connexion sécurisée (US1), inscription des personnels (US2) et gestion de session (US4).
+* **Tableau de Bord (Dashboard)** : Interface centrale permettant de visualiser les informations clés et de naviguer vers les outils de gestion (US25).
+* **Gestion des Classes** : Création et consultation des classes organisées par niveaux (Seconde, Première, Terminale, BTS) (US5-1, US5-2).
+* **Gestion des Élèves** : Inscription des élèves, suivi par classe et filtrage multicritères (US7-1, US7-2, US9).
+* **Gestion des Professeurs** : Enregistrement des enseignants et de leurs matières pour l'attribution des sanctions (US10, US12).
+* **Gestion des Sanctions** : Cycle de vie complet des sanctions (Heures de colle, avertissements, etc.) incluant la création et la consultation (US13, US16).
 
 ## 🛠 Technologies utilisées
 
-* **Backend** : PHP 8.x avec une architecture MVC simplifiée.
-* **Base de données** : MySQL 8.0.
-* **Conteneurisation** : Docker & Docker Compose.
-* **Gestion des dépendances** : Composer (Autoloading PSR-4).
-* **Outils** : PHPMyAdmin pour la gestion de la base de données.
+* **Backend** : PHP 8.x avec une architecture MVC personnalisée et un système de routage dynamique.
+* **Base de Données** : MySQL 8.0 gérant les relations entre utilisateurs, élèves, classes, professeurs et sanctions.
+* **Conteneurisation** : Docker & Docker Compose pour un environnement de développement reproductible.
+* **Gestion des dépendances** : Composer avec autoloading PSR-4 (Espace de nom : `App\`).
+* **Administration DB** : PHPMyAdmin intégré pour la gestion simplifiée des données.
 
 ## 🚀 Installation et Lancement
 
 ### Prérequis
 
-* Docker et Docker Compose installés sur votre machine.
-* PHP et Composer (pour l'installation des dépendances).
+* Docker et Docker Compose.
+* PHP 8.1+ et Composer (pour les dépendances locales).
 
 ### Étapes d'installation
 
@@ -37,50 +41,48 @@ L'application est organisée autour de plusieurs modules clés définis dans le 
    git clone <url-du-depot>
    cd Gestion-Vie-Scolaire
    ```
-2. **Installation des dépendances PHP** :
+2. **Installation des dépendances** :
    **Bash**
 
    ```
    composer install
    ```
 3. **Lancement de l'environnement Docker** :
-   L'application utilise Docker pour isoler la base de données et PHPMyAdmin.
    **Bash**
 
    ```
    docker-compose up -d
    ```
-4. **Initialisation de la base de données** :
-   Au premier lancement, le fichier `init.sql` est automatiquement exécuté pour créer les tables (`utilisateurs`, `eleves`, `classes`, `sanctions`, etc.) et insérer les données de test.
+
+   *Note : Le script `init.sql` est automatiquement exécuté au premier lancement pour initialiser les tables et les données de test (niveaux, types de sanctions, etc.).*
 
 ## ⚙️ Configuration
 
 ### Base de données
 
-La configuration se trouve dans `src/config/database.php`. Par défaut, les paramètres sont :
+La configuration par défaut est définie dans `src/config/database.php` mais peut être surchargée par des variables d'environnement via Docker :
 
-* **Host** : `127.0.0.1` (ou `db` via Docker)
-* **Port** : `3330`
-* **Utilisateur** : `root`
-* **Mot de passe** : `secret`
-* **Base de données** : `db_sanctions`
+* **Host** : `db` (inter-conteneur) ou `127.0.0.1` (local).
+* **Port** : `3330`.
+* **Utilisateur** : `root`.
+* **Mot de passe** : `secret`.
+* **Nom de la DB** : `db_sanctions`.
 
-### Accès aux outils
+### Accès aux services
 
-* **Application** : Accessible via votre serveur web local (ex: `http://localhost/public/index.php`).
-* **PHPMyAdmin** : Accessible sur le port `8010` (`http://localhost:8010`).
+* **Application** : `http://localhost/public/index.php`
+* **PHPMyAdmin** : `http://localhost:8010`
 
 ## 📁 Structure du projet
 
-* `public/` : Point d'entrée de l'application (`index.php`).
-* `src/` : Cœur de l'application.
-  * `controllers/` : Logique métier pour chaque fonctionnalité (Connexion, Sanctions, etc.).
-  * `Repositories/` : Requêtes SQL pour l'accès aux données.
-  * `Routing/` : Gestionnaire de routes.
-  * `config/` : Configuration de la base de données.
-* `templates/` : Fichiers de vues PHP (Layout et pages spécifiques).
-* `documentation/` : User stories et backlog du projet.
-* `init.sql` : Script de création de la base de données.
+* `public/` : Point d'entrée unique (`index.php`).
+* `src/` : Cœur de la logique.
+  * `controllers/` : Contrôleurs gérant les requêtes et la logique métier.
+  * `Repositories/` : Couche d'accès aux données (Requêtes SQL PDO).
+  * `Routing/` : Système de routage gérant les actions de l'application.
+  * `config/` : Fichiers de configuration (DB, etc.).
+* `templates/` : Vues PHP utilisant un `layout.php` commun pour la structure HTML.
+* `documentation/` : Détails des User Stories et du Backlog.
 
 ## 👤 Auteur
 
