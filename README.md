@@ -1,6 +1,4 @@
-Voici une version enrichie et structurée du fichier `README.md` pour votre projet, basée sur les fichiers fournis (backlog, structure technique, configuration Docker et base de données).
 
----
 
 # 📘 Gestion Vie Scolaire - Système de Sanctions
 
